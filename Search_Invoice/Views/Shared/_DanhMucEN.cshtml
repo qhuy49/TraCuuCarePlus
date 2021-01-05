@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutEN.cshtml";
+}
+
+<section>
+    <div class="row bg-title">
+        @RenderSection("ContentHeader", false)
+    </div>
+</section>
+
+<section class="content" style="padding-left:0px !important;padding-right:0px !important">
+    <div class="white-box1">
+        <div class="box-title">
+            @RenderSection("BoxTitle", false)
+        </div>
+        <style>
+            .k-grid-content > table > tbody > tr {
+                background: White;
+            }
+
+            .modal-dialog {
+                /*height: 80% !important;*/
+                padding-top: 10%;
+            }
+
+            .modal-content {
+                /*height: 100% !important;*/
+                overflow: visible;
+            }
+
+            .modal-body {
+                /*height: 70%;*/
+                overflow: auto;
+            }
+        </style>
+        @RenderSection("BoxBody", false)
+    </div>
+    @RenderSection("BoxFooter", false)
+</section>
+
+<section style="display:none;">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12 ">
+
+            <a href="https://careplusvn.com/vi/mung-ngay-2010-giam-20-goi-kham-suc-khoe-cho-nu" target="_blank" style="display:inline-block">
+
+                <img src="~/UI/achau/careplus_logo_31.jpg" class="img-fluid img-100" title="20% OFF ON WOMEN'S HEALTH PACKAGES">
+            </a>
+        </div>
+        <div class="col-lg-6 col-md-12   col-sm-6 col-xs-12">
+
+            <a href="https://careplusvn.com/vi/mung-ngay-2010-giam-20-goi-kham-suc-khoe-cho-nu" target="_blank" style="display:inline-block">
+                <img src="/UI/achau/careplus_logo_32.jpg" class="img-fluid img-100" title="20% OFF ON WOMEN'S HEALTH PACKAGES">
+            </a>
+        </div>
+    </div>
+</section>
+
+@RenderSection("Scripts", false)
+
+

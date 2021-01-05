@@ -1,0 +1,1097 @@
+﻿@using Search_Invoice.Models;
+@model LoginViewModel
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html lang="vi-VN">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+
+    <title>Tra Cứu Hóa Đơn Điện Tử</title>
+    <link rel='dns-prefetch' href='http://cdnjs.cloudflare.com/' />
+    <link rel='dns-prefetch' href='http://maxcdn.bootstrapcdn.com/' />
+    <link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+    <link rel='dns-prefetch' href='http://s.w.org/' />
+
+
+    <link href="/Content/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Content/plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="/Content/css/animate.css" rel="stylesheet">
+    <!-- color CSS gray/blue/purple/megna/default -->
+    <link href="/Content/css/style.css" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="/Content/css/colors/megna.css" id="theme" rel="stylesheet">
+
+
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='dashicons-css' href='~/UI/tracuu.minvoice.vn/wp-includes/css/dashicons.min37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='post-views-counter-frontend-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/post-views-counter/css/frontend6577.css?ver=1.2.14' type='text/css' media='all' />
+    <link rel='stylesheet' id='bootstrap_css-css' href='~/UI/maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='jquery-bxslider-css' href='~/UI/tracuu.minvoice.vn/wp-content/themes/minvoice/css/jquery.bxslider8aee.css?ver=4.1.2' type='text/css' media='all' />
+    <link rel='stylesheet' id='animate-css' href='~/UI/tracuu.minvoice.vn/wp-content/themes/minvoice/css/animate5152.css?ver=1.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='font-awesome-css' href='~/UI/tracuu.minvoice.vn/wp-content/themes/minvoice/css/fontawesome/css/all0e7d.css?ver=5.1.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='owl-carousel-css' href='~/UI/tracuu.minvoice.vn/wp-content/themes/minvoice/css/owl.carouselc412.css?ver=1.3.4' type='text/css' media='all' />
+    <link rel='stylesheet' id='owl-theme-css' href='~/UI/tracuu.minvoice.vn/wp-content/themes/minvoice/css/owl.themee34c.css?ver=1.3.5' type='text/css' media='all' />
+    <link rel='stylesheet' id='nivo-lightbox-css' href='~/UI/tracuu.minvoice.vn/wp-content/themes/minvoice/css/nivo-lightbox6a9f.css?ver=1.3.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='hashone-style-css' href='~/UI/tracuu.minvoice.vn/wp-content/themes/minvoice/style5152.css?ver=1.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='hashone-style-css' href='~/UI/tracuu.minvoice.vn/wp-content/themes/minvoice/theme.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='hashone-style-css' href='~/UI/tracuu.minvoice.vn/wp-content/themes/minvoice/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='hashone-style-css' href='~/UI/tracuu.minvoice.vn/wp-content/themes/minvoice/dropify.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='hashone-fonts-css' href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=latin,latin-ext' type='text/css' media='all' />
+    <link rel='stylesheet' id='banner-style-css' href='~/UI/tracuu.minvoice.vn/wp-content/themes/minvoice/bannerstyle6a9f.css?ver=1.3.6' type='text/css' media='all' />
+    <!-- Font awesome css -->
+    <link rel='stylesheet' id='um_fonticons_ii-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/um-fonticons-ii37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='um_fonticons_fa-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/um-fonticons-fa37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='select2-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/select2/select2.min37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='um_modal-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/um-modal37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='um_styles-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/um-styles37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='um_members-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/um-members37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='um_profile-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/um-profile37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='um_account-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/um-account37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='um_misc-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/um-misc37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='um_fileupload-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/um-fileupload37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='um_datetime-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/pickadate/default37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='um_datetime_date-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/pickadate/default.date37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='um_datetime_time-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/pickadate/default.time37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='um_raty-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/um-raty37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='um_scrollbar-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/um-scrollbar37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='um_crop-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/um-crop37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='um_tipsy-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/um-tipsy37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='um_responsive-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/um-responsive37cb.css?ver=4.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='um_default_css-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/css/um-old-default01f0.css?ver=2.0.17' type='text/css' media='all' />
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+    <script type='text/javascript' src='~/UI/cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-includes/js/imagesloaded.min55a0.js?ver=3.2.0'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-includes/js/masonry.mind617.js?ver=3.3.2'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-includes/js/jquery/jquery.masonry.minef70.js?ver=3.1.2b'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-includes/js/bootbox.min.js'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/select2/select2.full.min37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/um-modal.min37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/um-jquery-form.min37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/um-fileupload.min37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/pickadate/picker37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/pickadate/picker.date37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/pickadate/picker.time37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/pickadate/legacy37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/um-raty.min37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/um-scrollto.min37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/um-scrollbar.min37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/um-crop.min37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/um-tipsy.min37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/um-functions.min37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/um-gdpr.min01f0.js?ver=2.0.17'></script>
+    @*<script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/um-responsive.min37cb.js?ver=4.9.7'></script>*@
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/um-conditional.min37cb.js?ver=4.9.7'></script>
+    @*<script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/um-scripts.min37cb.js?ver=4.9.7'></script>*@
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/um-members.min37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/um-profile.min37cb.js?ver=4.9.7'></script>
+    <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ultimate-member/assets/js/um-account.min37cb.js?ver=4.9.7'></script>
+    <script src="/Content/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="~/Scripts/moment.min.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+    <meta name="generator" content="WordPress 4.9.7" />
+    <link rel='shortlink' href='#' />
+    <!-- Custom Logo: hide header text -->
+    <style id="custom-logo-css" type="text/css">
+        .hs-site-title,
+        .hs-site-description {
+            position: absolute;
+            clip: rect(1px, 1px, 1px, 1px);
+        }
+    </style>
+    <style type="text/css">
+        .request_name {
+            display: none !important;
+        }
+    </style>
+    <link rel="icon" href="~/UI/achau/logokhung.png" sizes="32x32" />
+    <link rel="icon" href="~/UI/achau/logokhung.png" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="~/UI/tracuu.minvoice.vn/wp-content/uploads/2018/favicon.ico" />
+    <style type="text/css" id="wp-custom-css">
+        .about-page.about-leader small,
+        .about-page.about-leader-2 small {
+            display: block;
+        }
+
+        .sub_cat_icon_business503,
+        .sub_cat_icon_business504,
+        .sub_cat_icon_business505,
+        .sub_cat_icon_business506 {
+            display: none;
+        }
+
+        .sub_cat_icon_business507,
+        .sub_cat_icon_business508,
+        .sub_cat_icon_business509,
+        .sub_cat_icon_business510 {
+            display: none;
+        }
+
+        .field-wrap > div input[type="text"],
+        .field-wrap select,
+        .field-wrap textarea {
+            background: #fff;
+        }
+
+        .hs-slide-cap-title,
+        .hs-section-title,
+        .h1,
+        .h2,
+        .h3,
+        .h4,
+        .h5,
+        .h6,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .documents-list-area-sidebar .list-group-item {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        ul.c6 {
+            list-style-position: inside;
+            list-style-type: square;
+        }
+
+        .user-dropdown-menu,
+        .language_switch {
+            display: none;
+        }
+
+        .search_header {
+            float: right;
+            margin: 0;
+        }
+
+        .middle_table_td td {
+            vertical-align: middle;
+        }
+
+        #hs-back-top {
+            bottom: 80px;
+        }
+    </style>
+    <style>
+        .k-grid-content > table > tbody > tr {
+            background: White;
+        }
+
+        .modal-dialog {
+            /*height: 80% !important;*/
+            padding-top: 10%;
+        }
+
+        .modal-content {
+            /*height: 100% !important;*/
+            overflow: visible;
+        }
+
+        .modal-body {
+            /*height: 70%;*/
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body class="post-template-default single single-post postid-2076 single-format-standard wp-custom-logo group-blog hs_right_sidebar">
+    <div id="hs-page">
+        @Html.Action("PageHomeHeader", "PageHome")
+        <!-- #hs-masthead -->
+        <div id="hs-content" class="hs-site-content hs-clearfix">
+            <header class="hs-main-header">
+                <div class="row">
+                    <div class="col-md-12 x">
+
+                        <a href="https://careplusvn.com/vi/mung-sinh-nhat-careplus-5-tuoi-giam-20-tat-ca-goi-kham-2" title="Chương trình khuyến mãi mừng sinh nhật CarePlus 5 tuổi" target="_blank">
+
+                            <div class="col-md-12 x" style="background-image: url('../../UI/achau/banner_careplus_2021.jpg') ;background-repeat:no-repeat;background-size:cover; height:400px; background-position:center;"></div>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <div class="hs-container">
+                <div id="single_primary" class="content-area row">
+
+                    <div id="single_primary" class="content-area col-sm-7 col-xs-12 col-md-7">
+                        <main id="main" class="site-main" role="main">
+                            <article id="post-2076" class="post-detail post-2076 post type-post status-publish format-standard has-post-thumbnail hentry category-khao-sat-y-kien">
+                                <h1 class="hs-post-detail-title">TRA CỨU HÓA ĐƠN ĐIỆN TỬ CAREPLUS VIỆT NAM</h1>
+                                <div class="entry-content">
+                                    <!-- <p>
+                                    <em>Kính chào anh/ chị!</em>
+                                    <br />
+                                    <em>Nhằm nâng cao chất lượng dịch vụ cung cấp,xin gửi tới anh/</em>
+                                    <br />
+                                    <em>chị trang web tra cứu hóa đơn điện tử liên quan đến sản phẩm hóa đơn điện tử. Anh/ chị vui lòng</em>
+                                    <br />
+                                    <em>nhập đầy đủ thông tin liên quan dưới đây.</em>
+                                    <br />
+                                    <em>Rất cảm ơn sự cộng tác của anh/ chị. Dữ liệu của anh/ chị sẽ được đảm bảo giữ bí mật</em>
+                                    <br />
+                                    <em>tuyệt đối.</em>
+                                </p>-->
+                                    <!--<p>-->
+                                    <!-- <em>-->
+                                    <div class="module">
+                                        <div class="module">
+                                            <div class="module-head">
+                                                <h3><b style="color: dodgerblue;">Thông tin tra cứu</b></h3>
+                                            </div>
+                                        </div>
+                                        <div class="module-body" align="left">
+                                            <div class="form-horizontal row-fluid">
+                                                <form action="/" class="form-horizontal" id="frmIndex" method="post" target="_blank">
+                                                    <input id="txtMST" name="masothue" type="hidden" class="form-control input-lg" value="0313149135">
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="basicinput"><b style="color: dodgerblue;">Số bảo mật</b><b style="color: red"> (*)</b></label>
+                                                        <div class="controls">
+                                                            <input id="txtSobaomat" name="sobaomat" type="text" class="form-control input-lg" placeholder="Nhập số bảo mật ...">
+                                                            <!--<input id="txtSobaomat" name="sobaomat" placeholder="Nhập số bảo mật ..." type="text" value="" >-->
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="module-body d" align="center" style="    padding-top: 6%; padding-bottom: 3%;">
+                                            <div class="form-horizontal row-fluid">
+                                                <div class="control-group">
+                                                    <div class="controls">
+                                                        <div class="col-xs-12">
+                                                            <button class="btn btn-danger btn-sm btn-block text-uppercase waves-effect waves-light" id="btnInvoice" type="button"><i class="fas fa-search"></i> Xem hóa đơn</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" hidden="hidden" id="divInvoice">
+                                            <div class="col-sm-12">
+                                                <div class="white-box">
+                                                    <h4 class="box-title m-b-0">Kết quả tra cứu</h4>
+                                                    <p class="text-muted m-b-20">Thông tin<code>hóa đơn</code>mà Quý khách hàng đã tra cứu !</p>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered" hidden="hidden" id="tableInvoice">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Mẫu số</th>
+                                                                    <th>Ký hiệu</th>
+                                                                    <th>Số hóa đơn</th>
+                                                                    <th>Ngày hóa đơn</th>
+                                                                    <th>Tổng tiền</th>
+                                                                    <th>Tải file</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <!--Thêm boby của bảng vào đây-->
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr width="70%" align="center" />
+
+
+
+
+
+                                        @*@using (Html.BeginForm("UploadInv", "TracuuFile", FormMethod.Post, new { enctype = "multipart/form-data" , target = "_blank" })) {*@
+                                        <!--<div class="white-box">
+                                        <div class="form-group ">
+                                            <div class="col-xs-12">
+                                                <label for="file">File hóa đơn (*.zip)</label>
+                                                <div class="dropify-wrapper">
+                                                    <div class="dropify-message">
+                                                        <span class="file-icon"></span>
+                                                        <p>Drag and drop a file here or click</p>
+                                                        <p class="dropify-error">Ooops, something wrong appended.</p>
+                                                    </div>
+                                                    <div class="dropify-loader"></div>
+                                                    <div class="dropify-errors-container">
+                                                        <ul></ul>
+                                                    </div>
+                                                    <input type="file" name="file" id="input-file-now" class="dropify">
+                                                    <button type="button" class="dropify-clear">Remove</button>
+                                                    <div class="dropify-preview">
+                                                        <span class="dropify-render"></span>
+                                                        <div class="dropify-infos">
+                                                            <div class="dropify-infos-inner">
+                                                                <p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p>
+                                                                <p class="dropify-infos-message">Drag and drop or click to replace</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group text-center m-t-20">
+                                            <div class="col-xs-12">
+                                                <button class="btn btn-danger btn-sm btn-block text-uppercase waves-effect waves-light" disabled="disabled" id="btnUpFile" type="submit"> Xem hóa đơn</button>
+
+                                            </div>
+                                        </div>
+                                    </div>-->
+                                        @* }*@
+                                    </div>
+
+
+
+                                    <!--</em>-->
+                                    <!--</p>
+                                <p style="text-align: center;"><em><strong>Xin chân thành cảm ơn Anh/ Chị đã sử dụng sản phẩm của M-Invoice!</strong></em></p>
+                                -->
+
+                            </article>
+                            <!-- #post-## -->
+                        </main>
+                        <!-- #main -->
+                    </div>
+                    <!-- #primary -->
+                    <div id="secondary" class="widget-area col-sm-5 col-xs-12 col-md-4">
+                        @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="white-box" style="border:2px solid #e9e9e9">
+                                <form class="form-horizontal form-material" id="loginform" action="index.html">
+                                    <a href="javascript:void(0)" class="text-center db">
+                                        <!--<img src="/Content/plugins/images/eliteadmin-logo-dark.png" alt="Home" />-->
+                                        <br><img src="/UI/achau/Logo CarePlus 380x100.jpg" style="width:100%;margin-top:-30px   ;" alt="Home">
+                                    </a>
+                                    <span style="color:red ; padding-left:7.5px; white-space:nowrap;">Khách hàng Doanh nghiệp</span>
+                                    <div class="form-group c" style="margin-top:20px">
+                                        <div class="col-xs-12 e" style="    padding-bottom: 3.6%;">
+                                            <div class="form-label-group">
+                                                @Html.TextBoxFor(model => model.username, new { @id = "inputuser", @class = "form-control", placeholder = "Tên truy cập", @style = "text-transform:uppercase" })
+                                                @Html.ValidationMessageFor(m => m.username, "", new { @class = "text-danger" })
+                                                @*<input class="form-control" data-val="true" data-val-required="The username field is required." id="inputuser" name="username" placeholder="Tên truy cập" style="text-transform:uppercase" type="text" value="">
+                                                <span class="field-validation-valid text-danger" data-valmsg-for="username" data-valmsg-replace="true"></span>*@
+                                                <label for="inputuser">Tên truy cập</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-xs-12">
+                                                <div class="form-label-group">
+                                                    @Html.PasswordFor(model => model.password, new { @id = "inputpass", @class = "form-control", placeholder = "Mật khẩu" })
+                                                    @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
+                                                    @*<input class="form-control" data-val="true" data-val-required="The password field is required." id="inputpass" name="password" placeholder="Mật khẩu" type="password">
+                                                    <span class="field-validation-valid text-danger" data-valmsg-for="password" data-valmsg-replace="true"></span>*@
+                                                    <label for="inputpass">Mật khẩu</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <div class="checkbox checkbox-success pull-left p-t-0">
+                                                        <input id="checkbox-signup" type="checkbox" value="checker">
+                                                        @*@Html.CheckBoxFor(m => m.RememberMe, new { @id = "checkbox-signup" })
+                                                        @Html.ValidationMessageFor(m => m.RememberMe, "", new { @class = "text-danger" })*@
+                                                        <label for="checkbox-signup"> Ghi nhớ </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group text-center m-t-20">
+                                                <div class="col-xs-12">
+                                                    <button class="btn btn-danger btn-sm btn-block text-uppercase waves-effect waves-light" type="submit">Đăng nhập</button>
+                                                </div>
+                                            </div>
+                                            @*<div class="form-group m-t-20">
+                                                <span style="color:red ; padding-left:7.5px;">Khách hàng Cá nhân</span>
+                                                <div class="col-xs-6">
+                                                    <!--<a  style="color:#0295E3; font-weight: 200; font-family:Arial; font-size:13px;" href="https://minvoice.vn/" target="_blank"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Đăng ký dùng thử !</a><br /> -->
+                                                    <a style="color:#0295E3; font-weight: 200; font-family:Arial; font-size:13px;" href="/trang-chu" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i> Tra cứu theo số bảo mật (Cá nhân) </a>
+
+                                                </div>
+
+
+                                                <br>
+                                                <div class="col-xs-6">
+                                                    <!--<a  style="color:#0295E3; font-weight: 200; font-family:Arial; font-size:13px;" href="https://minvoice.vn/" target="_blank"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Đăng ký dùng thử !</a><br /> -->
+                                                    <a href="/dang-nhap-en" <a="">English    <img src="/UI/tracuu.minvoice.vn/images/gb.png" style="width:18px " title="English"></a> <title="english" class="">
+
+                                                                </title="english">
+                                                </div>
+                                            </div>*@
+
+
+
+                                            <div class="form-group m-b-0">
+                                                <div class="col-sm-12 text-center">
+                                                    @if (!ViewData.ModelState.IsValid && ViewData.ModelState["ErrorLogin"] != null)
+                                                    {
+                                                        <div style="color:red ; white-space:nowrap;">
+                                                            @ViewData.ModelState["ErrorLogin"].Errors[0].ErrorMessage
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+
+
+
+
+
+
+                        }
+                    </div>
+                    <section style="display:none;">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12 ">
+                                @*style="background-image: url('https://careplusvn.com/Uploads/t/ba/banner-website-lay-mau-tai-nha_0004231.jpeg')*@
+                                <a href="https://careplusvn.com/vi/mung-ngay-2010-giam-20-goi-kham-suc-khoe-cho-nu" target="_blank" style="display:inline-block">
+
+                                    <img src="~/UI/achau/careplus_logo_31.jpg" class="img-fluid img-100" title="GIẢM 20% GÓI KHÁM SỨC KHỎE CHO NỮ">
+                                </a>
+                            </div>
+                            <div class="col-lg-6 col-md-12   col-sm-6 col-xs-12">
+                                @*style="background-image: url('https://careplusvn.com/Uploads/t/ba/bannerfaq-corona-vn_0004174.png')"*@
+                                <a href="https://careplusvn.com/vi/mung-ngay-2010-giam-20-goi-kham-suc-khoe-cho-nu" target="_blank" style="display:inline-block">
+                                    <img src="~/UI/achau/careplus_logo_32.jpg" class="img-fluid img-100" title="GIẢM 20% GÓI KHÁM SỨC KHỎE CHO NỮ">
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- #secondary -->
+                </div>
+
+            </div>
+            <!-- #content -->
+            <footer id="hs-colophon" class="hs-site-footer">
+                <div id="hs-bottom-footer">
+
+                    <div class="hs-container">
+                        <div class="hs-top-footer hs-clearfix row">
+                            <div class="hs-footer hs-footer1 col-md-4 col-sm-6 col-xs-12">
+                                <aside id="media_image-4" class="widget widget_media_image">
+                                    <a href="https://careplusvn.com/vi/" target="blank"><img src="~/UI/achau/logocareplusvn.jpg" class="image wp-image-431  attachment-full size-full" alt="" style="max-width: 100%; height: 100px;width: 200px;" /></a>
+                                    <p>
+                                        <br> Hệ thống Phòng khám quốc tế CarePlus được điều hành bởi
+                                        Công ty TNHH CityClinic Việt Nam. Những thông tin y khoa
+                                        trên trang web chỉ dùng để tham khảo, bạn nên liên hệ
+                                        bác sĩ để được tư vấn trước khi có bất cứ hành động nào.
+                                    </p>
+                                </aside>
+
+
+                            </div>
+
+
+                            <div class="hs-footer hs-footer2 col-md-5 col-sm-6 col-xs-12">
+                                <aside id="nav_menu-2" class="widget widget_nav_menu">
+
+                                    <div class="menu-gioi-thieu-footer-container">
+                                        <ul id="menu-gioi-thieu-footer" class="menu">
+                                            <ul id="menu-lien-he" class="menu">
+
+                                                <h3>   <b>      HỆ THỐNG PHÒNG KHÁM</b></h3>
+
+                                                <a href="#" target="blank">
+                                                    <img src="~/UI/achau/markerF.png" class="image wp-image-431  attachment-full size-full" alt="" />
+                                                    <b>Phòng khám Tân Bình </b>
+                                                </a>
+
+                                                <p>
+                                                    107 Tân Hải, P.13, Q. Tân Bình, TP.HCM <a href="https://careplusvn.com/vi/get-in-touch#mapArea-0"><strong style="color:#fa7015 ;font-size: 13px"> Xem bản đồ</strong></a>
+                                                    <b><br>Thứ 2 - Thứ 6:</b> 8:00 - 20:00
+                                                    <b><br>Thứ 7:</b> 8:00 - 17:00
+                                                    <b><br>Chủ nhật:</b> 8:00 - 12:00 (Chỉ áp dụng dịch vụ Nhi khoa)
+                                                </p>
+
+                                                <h3>           </h3>
+
+                                                <a href="#" target="blank">
+                                                    <img src="~/UI/achau/markerF.png" class="image wp-image-431  attachment-full size-full" alt="" />
+                                                    <b>Phòng khám Quận 7</b>
+                                                </a>
+                                                </b>
+                                                <p>
+                                                    Lầu 2, Crescent Plaza, 105 Tôn Dật Tiên, P.Tân Phú,Q.7, TP. HCM  <a href="https://careplusvn.com/vi/get-in-touch#mapArea-1"><strong style="color:#fa7015;font-size: 13px"> Xem bản đồ</strong></a>
+                                                    <b><br>Thứ 2 - Thứ 6:</b> 8:00 - 20:00
+                                                    <b><br>Thứ 7:</b> 8:00 - 17:00
+                                                    <b><br>Chủ nhật:</b> 8:00 - 12:00 (Chỉ áp dụng dịch vụ Nhi khoa)
+                                                </p>
+                                                <!--<li id="menu-item-158" class="mail-f menu-item menu-item-type-custom menu-item-object-custom menu-item-158"><a href="mailto:ontact@nhg.vn">Điện thoại:ontact@nhg.vn</a></li>
+                                            <li id="menu-item-160" class="phone-f menu-item menu-item-type-custom menu-item-object-custom menu-item-160"><a href="tel:(84.28) 38 233 533">Email:(84.28) 38 233 533</a></li>-->
+                                            </ul>
+
+                                        </ul>
+                                    </div>
+                                </aside>
+                            </div>
+                            <div class="hs-footer hs-footer6 col-md-3 col-sm-6 col-xs-12">
+                                <aside id="nav_menu-12" class="widget widget_nav_menu abc">
+                                    <h3>   <b>      LIÊN HỆ</b></h3>
+                                    <div class="menu-ket-noi-container">
+                                        <li id="menu-item-1856" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1856 current-menu-item" style="color:#fa7015; list-style:none"><a href="#" style="color:#fa7015"><span style="color:#686868">Hotline:</span> 1800 6116</a></li>
+                                        <li id="menu-item-1855" class="menu-item menu-item-type-taxonomy menu-item-object-vtevents_group menu-item-1855 " style="color:#fa7015; list-style:none"><a href="#" style="color:#fa7015"><span style="color:#686868">Email:</span> info@careplusvn.com</a></li>
+                                        <br><button style="background: #025b97" onclick="window.location.href = 'https://careplusvn.com/vi/give-us-your-feedback';">Gửi phản hồi cho chúng tôi</button>
+                                    </div>
+                                </aside>
+                                <aside id="custom_html-5" class="widget_text widget widget_custom_html">
+                                    <div class="textwidget custom-html-widget">
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </footer>
+            <!-- #colophon -->
+        </div>
+        <!-- #page -->
+        <div id="hs-back-top" class="animated hs-hide"><i class="fa fa-angle-up"></i></div>
+        <div id="um_upload_single" style="display:none">
+        </div>
+        <div id="um_view_photo" style="display:none">
+            <a href="#" data-action="um_remove_modal" class="um-modal-close"><i class="um-faicon-times"></i></a>
+            <div class="um-modal-body photo">
+                <div class="um-modal-photo">
+                </div>
+            </div>
+        </div>
+        <link rel='stylesheet' id='nf-display-css' href='~/UI/tracuu.minvoice.vn/wp-content/plugins/ninja-forms/assets/css/display-structure37cb.css?ver=4.9.7' type='text/css' media='all' />
+        <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/themes/minvoice/js/jquery.bxslider8aee.js?ver=4.1.2'></script>
+        <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/themes/minvoice/js/owl.carousel3ba1.js?ver=1.3.3'></script>
+        <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/themes/minvoice/js/jquery.navbb62.js?ver=20161003'></script>
+        <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/themes/minvoice/js/SmoothScrollc7bc.js?ver=20150903'></script>
+        <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/themes/minvoice/js/hashone-customc7bc.js?ver=20150903'></script>
+        <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/themes/minvoice/js/mainsa346.js?ver=2018'></script>
+        <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-includes/js/comment-reply.min37cb.js?ver=4.9.7'></script>
+        <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-includes/js/wp-embed.min37cb.js?ver=4.9.7'></script>
+        <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-includes/js/underscore.min4511.js?ver=1.8.3'></script>
+        <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-includes/js/backbone.min9632.js?ver=1.2.3'></script>
+        <script type='text/javascript' src='~/UI/tracuu.minvoice.vn/wp-content/plugins/ninja-forms/assets/js/min/front-end-deps7433.js?ver=3.3.7'></script>
+        <script type="text/javascript" src="~/UI/d389zggrogs7qo.cloudfront.net/js/button.js"></script>
+
+        <script src="/Content/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="/Content/bootstrap/dist/js/tether.min.js"></script>
+        <script src="/Content/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/Content/plugins/bower_components/bootstrap-extension/js/bootstrap-extension.min.js"></script>
+        <!-- Menu Plugin JavaScript -->
+        <script src="/Content/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+        <!--slimscroll JavaScript -->
+        <script src="/Content/js/jquery.slimscroll.js"></script>
+        <!--Wave Effects -->
+        <script src="/Content/js/waves.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="/Content/js/custom.min.js"></script>
+        <!--Style Switcher -->
+        <script src="/Content/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+
+        <script>
+            function handleFileSelect(evt) {
+                var files = evt.target.files;
+                //console.log(files[0].type);
+                var arr = ['application/zip', 'application/octet-stream', 'application/x-zip-compressed', 'multipart/x-zip'];
+
+                //if (files[0].type != "application/zip") {
+                if (arr.indexOf(files[0].type) == -1) {
+                    bootbox.alert("Định dạng File không đúng (*.zip) !");
+                    return;
+                } else {
+                    if (files[0].size <= 0) {
+                        bootbox.alert("Bạn chưa chọn File !");
+                        return;
+                    } else {
+                        $(':button[type="submit"]').prop('disabled', false);
+                    }
+                }
+
+            }
+
+            document.getElementById('input-file-now').addEventListener('change', handleFileSelect, false);
+        </script>
+        <script>
+            function PrintInvoicePDF(sbm, mst, type) {
+                bootbox.dialog({
+                    title: "Đang in hóa đơn ...",
+                    message: "<p class='text-center' ><i style='font-size:350%;' class='fa fa-spin fa-spinner'></i></p>",
+                    buttons: {
+                        cancel: {
+                            label: '<i class="fa fa-times"></i> Hủy',
+                            className: 'btn-danger',
+                            callback: function () {
+                                clearTimeout(interVal);
+                                bootbox.hideAll();
+                            }
+                        }
+                    }
+                });
+
+                var interVal = setTimeout(function () {
+                    var model = '{ "sobaomat": "' + sbm + '", "masothue": "' + mst + '","type":"' + type + '" }';
+
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', '/Tracuu2/PrintInvoice', true);
+                    xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+                    xhr.responseType = 'arraybuffer';
+                    xhr.send(model);
+                    xhr.onload = function () {
+                        if (this.status === 200) {
+                            var filename = "";
+                            var disposition = xhr.getResponseHeader('Content-Disposition');
+                            if (disposition && disposition.indexOf('attachment') !== -1) {
+                                var filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+                                var matches = filenameRegex.exec(disposition);
+                                if (matches != null && matches[1]) filename = matches[1].replace(/['"]/g, '');
+                            }
+                            var type = xhr.getResponseHeader('Content-Type');
+
+                            var blob = typeof File === 'function' ? new File([this.response], filename, {
+                                type: type
+                            }) : new Blob([this.response], {
+                                type: type
+                            });
+
+                            if (typeof window.navigator.msSaveBlob !== 'undefined') {
+                                window.navigator.msSaveBlob(blob, filename);
+                            } else {
+                                var URL = window.URL || window.webkitURL;
+                                var downloadUrl = URL.createObjectURL(blob);
+
+                                if (filename) {
+                                    var a = document.createElement("a");
+                                    if (typeof a.download === 'undefined') {
+                                        bootbox.hideAll();
+                                        clearTimeout(interVal);
+                                        var newWindow = window.open('/');
+                                        newWindow.onload = () => {
+                                            newWindow.location = downloadUrl;
+                                        };
+                                        //var a = document.createElement("a");
+                                        //a.target = '_blank';
+                                        //document.body.appendChild(a);
+
+                                        //a.href = downloadUrl;
+                                        //var image = document.createElement('image');
+                                        //image.src = 'data:image/bmp;base64,' + blob;
+                                        //document.body.appendChild(image);
+
+                                        //window.open(downloadUrl, '_blank');
+                                    } else {
+                                        bootbox.hideAll();
+                                        clearTimeout(interVal);
+                                        var newWindow = window.open('/');
+                                        newWindow.onload = () => {
+                                            newWindow.location = downloadUrl;
+                                        };
+                                        //window.open(downloadUrl, '_blank');
+                                    }
+                                } else {
+                                    bootbox.hideAll();
+                                    clearTimeout(interVal);
+                                    var newWindow = window.open('/');
+                                    newWindow.onload = () => {
+                                        newWindow.location = downloadUrl;
+                                    };
+                                    //window.open(downloadUrl, '_blank');
+                                }
+
+                                //setTimeout(function () {
+                                //    URL.revokeObjectURL(downloadUrl);
+                                //    bootbox.hideAll();
+                                //    clearTimeout(interVal);
+                                //}, 100);
+                            }
+                        } else {
+                            bootbox.hideAll();
+                            clearTimeout(interVal);
+                            //console.log(this.response);
+                            bootbox.alert("Có lỗi xảy ra !");
+                        }
+                    };
+                }, 1000);
+            }
+        </script>
+        <script>
+            function PrintInvoiceChuyenDoiPDF() {
+                var mst = $("#txtMST").val();
+                var sbm = $("#txtSobaomat").val();
+                var inchuyendoi = 1;
+                var type = "PDF";
+                bootbox.dialog({
+                    title: "Đang in hóa đơn ...",
+                    message: "<p class='text-center' ><i style='font-size:350%;' class='fa fa-spin fa-spinner'></i></p>",
+                    buttons: {
+                        cancel: {
+                            label: '<i class="fa fa-times"></i> Hủy',
+                            className: 'btn-danger',
+                            callback: function () {
+                                clearTimeout(interVal);
+                                bootbox.hideAll();
+                            }
+                        }
+                    }
+                });
+                var interVal = setTimeout(function () {
+                    var model = '{ "sobaomat": "' + sbm + '", "masothue": "' + mst + '","type":"' + type + '", "inchuyendoi":"' + inchuyendoi + '" }';
+
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', '/Tracuu2/PrintInvoice', true);
+                    xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+                    xhr.responseType = 'arraybuffer';
+                    xhr.send(model);
+                    xhr.onload = function () {
+                        if (this.status === 200) {
+                            var filename = "";
+                            var disposition = xhr.getResponseHeader('Content-Disposition');
+                            if (disposition && disposition.indexOf('attachment') !== -1) {
+                                var filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+                                var matches = filenameRegex.exec(disposition);
+                                if (matches != null && matches[1]) filename = matches[1].replace(/['"]/g, '');
+                            }
+                            var type = xhr.getResponseHeader('Content-Type');
+                            var blob = typeof File === 'function' ? new File([this.response], filename, {
+                                type: type
+                            }) : new Blob([this.response], {
+                                type: type
+                            });
+
+                            if (typeof window.navigator.msSaveBlob !== 'undefined') {
+                                window.navigator.msSaveBlob(blob, filename);
+                            } else {
+                                var URL = window.URL || window.webkitURL;
+                                var downloadUrl = URL.createObjectURL(blob);
+
+                                if (filename) {
+                                    var a = document.createElement("a");
+                                    if (typeof a.download === 'undefined') {
+                                        bootbox.hideAll();
+                                        clearTimeout(interVal);
+                                        var newWindow = window.open('/');
+                                        newWindow.onload = () => {
+                                            newWindow.location = downloadUrl;
+                                        };
+                                    } else {
+                                        bootbox.hideAll();
+                                        clearTimeout(interVal);
+                                        var newWindow = window.open('/');
+                                        newWindow.onload = () => {
+                                            newWindow.location = downloadUrl;
+                                        };
+                                    }
+                                } else {
+                                    bootbox.hideAll();
+                                    clearTimeout(interVal);
+                                    var newWindow = window.open('/');
+                                    newWindow.onload = () => {
+                                        newWindow.location = downloadUrl;
+                                    };
+                                }
+                            }
+                        } else {
+                            bootbox.hideAll();
+                            clearTimeout(interVal);
+                            bootbox.alert("Có lỗi xảy ra !");
+                        }
+                    };
+                }, 1000);
+            }
+        </script>
+        <script>
+            function ExportZipXML(sbm, mst) {
+                bootbox.dialog({
+                    title: "Đang Export hóa đơn File .Zip ...",
+                    message: "<p class='text-center' ><i style='font-size:350%;' class='fa fa-spin fa-spinner'></i></p>",
+                    buttons: {
+                        cancel: {
+                            label: '<i class="fa fa-times"></i> Hủy',
+                            className: 'btn-danger',
+                            callback: function () {
+                                clearTimeout(interVal);
+                                bootbox.hideAll();
+                            }
+                        }
+                    }
+                });
+                var interVal = setTimeout(function () {
+                    var model = '{ "sobaomat": "' + sbm + '", "masothue": "' + mst + '" }';
+                    var kiki = JSON.parse(model);
+                    console.log(kiki);
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', '/Tracuu2/ExportZipFileXML', true);
+                    xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+                    xhr.responseType = 'arraybuffer';
+                    xhr.send(model);
+                    xhr.onload = function () {
+                        if (this.status === 200) {
+                            var filename = "";
+                            var disposition = xhr.getResponseHeader('Content-Disposition');
+                            if (disposition && disposition.indexOf('attachment') !== -1) {
+                                var filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+                                var matches = filenameRegex.exec(disposition);
+                                if (matches != null && matches[1]) filename = matches[1].replace(/['"]/g, '');
+                            }
+                            var type = xhr.getResponseHeader('Content-Type');
+
+                            var blob = typeof File === 'function' ? new File([this.response], filename, {
+                                type: type
+                            }) : new Blob([this.response], {
+                                type: type
+                            });
+                            if (typeof window.navigator.msSaveBlob !== 'undefined') {
+                                window.navigator.msSaveBlob(blob, filename);
+                            } else {
+                                var URL = window.URL || window.webkitURL;
+                                var downloadUrl = URL.createObjectURL(blob);
+
+                                if (filename) {
+                                    var a = document.createElement("a");
+                                    if (typeof a.download === 'undefined') {
+                                        bootbox.hideAll();
+                                        clearTimeout(interVal);
+                                        var newWindow = window.open('/');
+                                        newWindow.onload = () => {
+                                            newWindow.location = downloadUrl;
+                                        };
+                                        // window.open(downloadUrl, '_blank');
+                                    } else {
+                                        bootbox.hideAll();
+                                        clearTimeout(interVal);
+                                        var newWindow = window.open('/');
+                                        newWindow.onload = () => {
+                                            newWindow.location = downloadUrl;
+                                        };
+                                        // window.open(downloadUrl, '_blank');
+                                    }
+                                } else {
+                                    bootbox.hideAll();
+                                    clearTimeout(interVal);
+                                    var newWindow = window.open('/');
+                                    newWindow.onload = () => {
+                                        newWindow.location = downloadUrl;
+                                    };
+                                    // window.open(downloadUrl, '_blank');
+                                }
+
+                                //setTimeout(function () {
+                                //    bootbox.hideAll();
+                                //    clearTimeout(interVal);
+                                //    URL.revokeObjectURL(downloadUrl);
+                                //}, 100);
+                            }
+                        } else {
+                            bootbox.hideAll();
+                            clearTimeout(interVal);
+                            //console.log(this.response);
+                            bootbox.alert("Có lỗi xảy ra !");
+                        }
+                    };
+                }, 1000);
+            }
+        </script>
+        <script>
+
+            $(document).ready(function () {
+                function getFormData($form) {
+                    var unindexed_array = $form.serializeArray();
+                    var indexed_array = {};
+
+                    $.map(unindexed_array, function (n, i) {
+                        indexed_array[n['name']] = n['value'];
+                    });
+
+                    return indexed_array;
+                }
+
+                $("#btnInvoice").click(function () {
+                    bootbox.dialog({
+                        title: "Đang tra cứu hóa đơn",
+                        message: "<p class='text-center' ><i style='font-size:350%;' class='fa fa-spin fa-spinner'></i></p>",
+                        buttons: {
+                            cancel: {
+                                label: '<i class="fa fa-times"></i> Hủy',
+                                className: 'btn-danger',
+                                callback: function () {
+                                    clearTimeout(interVal);
+                                    bootbox.hideAll();
+                                }
+                            }
+                        }
+                    });
+                    var interVal = setTimeout(function () {
+                        var $form = $('#frmIndex');
+                        var datapost = $form.serialize();
+
+                        var model = getFormData($form);
+                        var dataObject = JSON.stringify(model);
+
+                        $.ajax({
+                            url: "/Tracuu2/GetInfoInvoice",
+                            type: "POST",
+                            contentType: "application/json; charset=utf-8",
+                            data: dataObject,
+                            success: function (result) {
+
+                                if (!result.hasOwnProperty("error")) {
+
+                                    $('#divInvoice').prop('hidden', false);
+                                    $('#tableInvoice').prop('hidden', false);
+                                    $("#tableInvoice tbody>tr").remove();
+
+                                    for (var i = 0; i < result.data.length; i++) {
+                                        var tien = result.data[i].inv_TotalAmount == null ? '' : result.data[i].inv_TotalAmount.toLocaleString();
+                                        $("#tableInvoice").find('tbody')
+                                            .append('<tr><td>' + result.data[i].mau_hd + '</td><td>' + result.data[i].inv_invoiceSeries + '</td><td><a href="#" onClick = "PrintInvoicePDF(\'' + result.data[i].sobaomat.toString() + '\',\'' + result.data[i].mst.toString() + '\',\'PDF\');" data-toggle="tooltip" data-placement="top" title="In hóa đơn" >' + result.data[i].inv_invoiceNumber + '</a></td>' +
+                                                '<td>' + moment(result.data[i].inv_invoiceIssuedDate).format("DD/MM/YYYY") + '</td>' +
+                                                '<td>' + tien + '</td>' +
+                                                '<td><a href="#" onClick = "PrintInvoicePDF(\'' + result.data[i].sobaomat.toString() + '\',\'' + result.data[i].mst.toString() + '\',\'PDF\');" data-toggle="tooltip" data-placement="top" title="Dowload File PDF"><i class="fas fa-file-pdf text-info m-r-10" style="border-radius: 4px;border-bottom: 2px solid #ccc;"></i></button>' +
+                                                '<a href="#" onClick = "ExportZipXML(\'' + result.data[i].sobaomat.toString() + '\',\'' + result.data[i].mst.toString() + '\');" data-toggle="tooltip" data-placement="top" title="Dowload File .Zip XML"><i class="fas fa-file-archive text-danger m-r-10" style="border-radius: 4px;border-bottom: 2px solid #ccc;"></i></a>' +
+                                                '<a href="#" onClick = "PrintInvoiceChuyenDoiPDF();" data-toggle="tooltip" data-placement="top" title="Dowload In cđổi"><i style="font-size:22px;border-radius: 4px;border-bottom: 2px solid #ccc;" class="fa fa-file-pdf-o text-success"></i></a></td></tr>');
+                                    }
+                                    bootbox.hideAll();
+                                    clearTimeout(interVal);
+                                }
+                                else {
+                                    $("#tableInvoice tbody>tr").remove();
+                                    bootbox.hideAll();
+                                    clearTimeout(interVal);
+                                    bootbox.alert(result.error);
+                                }
+                            }
+                        });
+                    }, 1000);
+                });
+
+
+
+                $('#btnUpFile').click(function () {
+                    var data = new FormData();
+                    var file = $('input[type=file]')[0].files[0];
+                    data.append('file', file);
+
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', '/TracuuFile/UploadInv', true);
+                    xhr.responseType = 'arraybuffer';
+                    xhr.send(data);
+                    xhr.onload = function () {
+                        if (this.status === 200) {
+                            var filename = "";
+                            var disposition = xhr.getResponseHeader('Content-Disposition');
+                            if (disposition && disposition.indexOf('attachment') !== -1) {
+                                var filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+                                var matches = filenameRegex.exec(disposition);
+                                if (matches != null && matches[1]) filename = matches[1].replace(/['"]/g, '');
+                            }
+                            var type = xhr.getResponseHeader('Content-Type');
+
+                            var blob = typeof File === 'function' ? new File([this.response], filename, {
+                                type: type
+                            }) : new Blob([this.response], {
+                                type: type
+                            });
+                            if (typeof window.navigator.msSaveBlob !== 'undefined') {
+                                window.navigator.msSaveBlob(blob, filename);
+                            } else {
+                                var URL = window.URL || window.webkitURL;
+                                var downloadUrl = URL.createObjectURL(blob);
+
+                                if (filename) {
+                                    var a = document.createElement("a");
+                                    if (typeof a.download === 'undefined') {
+                                        var newWindow = window.open('/');
+                                        newWindow.onload = () => {
+                                            newWindow.location = downloadUrl;
+                                        };
+                                        //window.open(downloadUrl, '_blank');
+                                    } else {
+                                        var newWindow = window.open('/');
+                                        newWindow.onload = () => {
+                                            newWindow.location = downloadUrl;
+                                        };
+                                        //window.open(downloadUrl, '_blank');
+                                    }
+                                } else {
+                                    var newWindow = window.open('/');
+                                    newWindow.onload = () => {
+                                        newWindow.location = downloadUrl;
+                                    };
+                                    // window.open(downloadUrl, '_blank');
+                                }
+
+                                //setTimeout(function() {
+                                //    URL.revokeObjectURL(downloadUrl);
+                                //}, 100);
+                            }
+                        } else {
+                            bootbox.alert("Có lỗi xảy ra !");
+                        }
+                    };
+
+                });
+            });
+        </script>
+        <script>
+            //khai báo biến slideIndex đại diện cho slide hiện tại
+            var slideIndex;
+            // KHai bào hàm hiển thị slide
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+
+                slides[slideIndex].style.display = "block";
+                dots[slideIndex].className += " active";
+                //chuyển đến slide tiếp theo
+                slideIndex++;
+                //nếu đang ở slide cuối cùng thì chuyển về slide đầu
+                if (slideIndex > slides.length - 1) {
+                    slideIndex = 0
+                }
+                //tự động chuyển đổi slide sau 5s
+                setTimeout(showSlides, 5000);
+            }
+            //mặc định hiển thị slide đầu tiên
+            showSlides(slideIndex = 0);
+
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+        </script>
+
+
+        @*@RenderSection("scripts", required: false)*@
+</body>
+
+</html>
+
